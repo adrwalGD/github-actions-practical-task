@@ -40,6 +40,9 @@ jobs:
       - name: Execute Tests
         run: docker run --rm ubuntu
 
+      - name: Execute Tests compose
+        run: docker compose up -d
+
   build:
     name: Build (Skip Tests)
     runs-on: ubuntu-latest
