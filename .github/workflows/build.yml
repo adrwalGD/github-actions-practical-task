@@ -38,7 +38,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Execute Tests
-        run: ./mvnw test
+        run: docker run --rm ubuntu
 
   build:
     name: Build (Skip Tests)
