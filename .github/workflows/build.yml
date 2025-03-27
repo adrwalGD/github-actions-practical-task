@@ -22,7 +22,7 @@ jobs:
         run: mvn checkstyle:checkstyle
 
       - name: Upload Checkstyle Report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: checkstyle-report
           path: target/site/checkstyle.html
@@ -35,6 +35,9 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
 
       - name: Execute Tests
         run: mvn test
